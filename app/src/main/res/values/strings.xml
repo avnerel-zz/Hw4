@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Hw4</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_activity_title">New sheep data</string>
+    <string name="enter_name">Enter name</string>
+    <string name="enter_age">Enter age</string>
+    <string name="insert_data">Insert data</string>
+    <string name="view_all">View all</string>
+    <string name="sheep_color">Color</string>
+    <string name="switch_off">Black</string>
+    <string name="switch_on">White</string>
+    <string name="title_activity_sheep_list">Hw4</string>
+    <string name="age_prefix">(Age:</string>
+    <string name="age_suffix">)</string>
+    <string name="color_prefix">(Color:</string>
+    <string name="color_suffix">)</string>
+</resources>

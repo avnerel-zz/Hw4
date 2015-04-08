@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/main_layout">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_title"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:id="@+id/tv_form" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:id="@+id/central_layout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_sheep_name"
+            android:focusableInTouchMode="true"
+            android:hint="@string/enter_name" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/et_sheep_age"
+            android:maxLength="3"
+            android:focusableInTouchMode="true"
+            android:hint="@string/enter_age" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sheep_color"
+            android:id="@+id/s_sheep_color"
+            android:textOff="@string/switch_off"
+            android:textOn="@string/switch_on"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_data"
+            android:gravity="center"
+            android:id="@+id/b_insert_data"
+            android:layout_gravity="center_horizontal"
+            android:enabled="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            android:gravity="center"
+            android:id="@+id/b_view_all"
+            android:layout_gravity="center_horizontal"  />
+
+    </LinearLayout>
+
+
+</LinearLayout>
