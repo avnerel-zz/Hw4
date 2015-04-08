@@ -16,4 +16,5 @@
     <string name="age_suffix">)</string>
     <string name="color_prefix">(Color:</string>
     <string name="color_suffix">)</string>
+    <string name="clear_list">Clear list</string>
 </resources>

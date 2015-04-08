@@ -20,11 +20,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class SheepListActivity extends Activity {
+public class SheepListActivity extends Activity implements MenuItem.OnMenuItemClickListener {
 
     private ListView lv_myList;
 
+    private MenuItem clearList;
 
+    SheepListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +41,14 @@ public class SheepListActivity extends Activity {
         lv_myList = (ListView) findViewById(R.id.lv_sheep_list);
 
         //ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, values);
-        SheepListAdapter adapter = new SheepListAdapter(sheepData);
+        adapter = new SheepListAdapter(sheepData);
 
         lv_myList.setClickable(true);
 
         lv_myList.setAdapter(adapter);
 
         lv_myList.setOnItemClickListener(adapter);
+
 
     }
 
@@ -54,6 +57,10 @@ public class SheepListActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_sheep_list, menu);
+
+        clearList = (MenuItem) menu.findItem(R.id.mi_clear_list);
+        clearList.setOnMenuItemClickListener(this);
+
         return true;
     }
 
@@ -72,6 +79,22 @@ public class SheepListActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        if(item.getItemId() == R.id.mi_clear_list){
+
+            SheepApplication app = (SheepApplication)getApplicationContext();
+
+            app.deleteDatabase(SQLUtils.DB_NAME);
+
+            recreate();
+//            adapter.clearData();
+
+        }
+        return false;
+    }
+
 
     public class SheepListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
@@ -81,6 +104,11 @@ public class SheepListActivity extends Activity {
 
             data = sheepData;
         }
+
+//        public void clearData(){
+//
+//            data.clear();
+//        }
 
         @Override
         public int getCount() {
